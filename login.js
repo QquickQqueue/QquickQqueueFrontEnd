@@ -44,6 +44,46 @@ document.addEventListener("DOMContentLoaded", function () {
    });
 });
 
+function loginWithKakao() {
+   Kakao.Auth.login({
+      success: function (authObj) {
+         fetch("http://localhost:8080/api/kakao?accessToken=" + authObj.access_token)
+            .then(response => {
+               if (response.ok) {
+                  const accessToken = response.headers.get("Access-Token");
+                  const refreshToken = response.headers.get("Refresh-Token");
+                  const accessTokenTime = response.headers.get("Date");
+                  const refreshTokenTime = response.headers.get("Date");
+
+                  setCookie("access_token", accessToken, accessTokenTime);
+                  setCookie("refresh_token", refreshToken, refreshTokenTime);
+
+                  return response.json();
+               } else {
+                  return response.json().then(errorData => {
+                     alert(errorData.message);
+                     throw new Error(errorData.message);
+                  });
+               }
+            })
+            .then(data => {
+               window.location.href = "main.html";
+            })
+      },
+      fail: function (err) {
+         alert(JSON.stringify(err))
+      },
+   })
+}
+
+function kakaoAuthorize() {
+   Kakao.Auth.authorize({
+      redirectUri: 'http://localhost:5500/login.html'
+   });
+
+   const code = new URLSearchParams(window.location.search).get('code');
+}
+
 function setCookie(name, value, expiresInSeconds) {
    const expires = new Date();
    expires.setTime(expires.getTime() + expiresInSeconds * 1000);

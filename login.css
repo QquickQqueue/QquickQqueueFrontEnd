@@ -92,17 +92,3 @@ form {
    margin-left: 10px;
    margin-right: 10px;
 }
-
-.kakaoLoginButton {
-   background-color: rgb(240, 236, 9);
-   color: black;
-   padding: 10px;
-   margin-top: 14px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-.kakaoLoginButton:hover {
-   background-color: rgb(255, 251, 0);
-}
