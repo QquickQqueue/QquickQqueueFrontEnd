@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>QquickQqueue</title>
-   <link rel="stylesheet" href="main.css">
-   <script src="..."></script>
+   <link rel="stylesheet" href="login.css">
+   <script src="login.js"></script>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,6 +20,30 @@
       <button type="button" class="logo" onclick="location.href='main.html'">
          QQ
       </button>
+   </div>
+   <div>
+      <div class="loginBox">
+         <h3 class="boxHeader">
+            Login to QQ
+         </h3>
+         <div>
+            <form>
+               <div>
+                  <label for="email" class="emailLabel">EMAIL</label>
+                  <input type="email" class="emailInput" required>
+               </div>
+               <div>
+                  <label for="password" class="passwordLabel">PASSWORD</label>
+                  <input type="password" class="passwordInput" required>
+               </div>
+               <div>
+                  <button type="submit" class="kakaoLoginButton">카카오 로그인</button>
+                  <button type="submit" class="loginButton">로그인</button>
+                  <button type="button" class="signupButton" onclick="location.href='signup.html'">회원가입</button>
+               </div>
+            </form>
+         </div>
+      </div>
    </div>
 </body>
 

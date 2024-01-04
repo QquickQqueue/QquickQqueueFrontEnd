@@ -13,9 +13,16 @@ window.onload = function () {
    const myPageP = document.createElement("p");
    myPageP.textContent = "마이페이지";
 
+   const logoutP = document.createElement("p");
+   logoutP.textContent = "로그아웃";
+   
+   console.log(isLoggedIn);
+
    if (isLoggedIn) {
       loginSignupDiv.innerHTML = "";
       loginSignupDiv.appendChild(myPageP);
+      loginSignupDiv.appendChild(logoutP);
+
       myPageP.addEventListener("click", function () {
          window.location.href = "myPage.html";
       });
@@ -117,7 +124,24 @@ function redirectToDetailPage(musicalId) {
 }
 
 function checkIfUserIsLoggedIn() {
-   return false;
+   const accessToken = getAccessTokenFromCookie();
+   if (accessToken !== null) {
+      return true;
+   } else {
+      return false;
+   }
+}
+
+function getAccessTokenFromCookie() {
+   const cookies = document.cookie.split(';');
+
+   for (const cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      if (name === 'access_token') {
+         return value;
+      }
+   }
+   return null;
 }
 
 function updatePaginationButtons(data) {
