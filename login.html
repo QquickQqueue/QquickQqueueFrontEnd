@@ -13,6 +13,10 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"></script>
+      <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+      <script>
+         Kakao.init('c8d5a4891eb2d78556709bbce199441e');
+      </script>
 </head>
 
 <body>
@@ -37,7 +41,12 @@
                   <input type="password" class="passwordInput" required>
                </div>
                <div>
-                  <button type="submit" class="kakaoLoginButton">카카오 로그인</button>
+                  <a id="custom-login-btn" onClick="loginWithKakao()">
+                     <img
+                       src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+                       width="242"
+                     />
+                   </a>
                   <button type="submit" class="loginButton">로그인</button>
                   <button type="button" class="signupButton" onclick="location.href='signup.html'">회원가입</button>
                </div>
