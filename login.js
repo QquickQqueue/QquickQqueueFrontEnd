@@ -76,14 +76,6 @@ function loginWithKakao() {
    })
 }
 
-function kakaoAuthorize() {
-   Kakao.Auth.authorize({
-      redirectUri: 'http://localhost:5500/login.html'
-   });
-
-   const code = new URLSearchParams(window.location.search).get('code');
-}
-
 function setCookie(name, value, expiresInSeconds) {
    const expires = new Date();
    expires.setTime(expires.getTime() + expiresInSeconds * 1000);
