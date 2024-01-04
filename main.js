@@ -15,8 +15,6 @@ window.onload = function () {
 
    const logoutP = document.createElement("p");
    logoutP.textContent = "로그아웃";
-   
-   console.log(isLoggedIn);
 
    if (isLoggedIn) {
       loginSignupDiv.innerHTML = "";
