@@ -24,6 +24,10 @@ window.onload = function () {
       myPageP.addEventListener("click", function () {
          window.location.href = "myPage.html";
       });
+
+      logoutP.addEventListener("click", function () {
+         performLogout();
+      })
    } else {
       const loginP = createAndSetupLinkP("로그인", "login.html");
       const signupP = createAndSetupLinkP("회원가입", "signup.html");
@@ -101,6 +105,41 @@ function displayMusicals(musicals) {
    });
 
    musicalListContainer.appendChild(rowDiv);
+}
+
+function performLogout() {
+   fetch('http://localhost:8080/api/logout', {
+      method: 'GET', headers: {
+         "Content-Type": "application/json",
+         "ACCESS-TOKEN": getAccessTokenFromCookie()
+      }
+   })
+      .then(response => {
+         if (response.ok) {
+            deleteTokenCookie();
+            window.location.href = 'main.html';
+         }
+      })
+      .catch(error => {
+         console.error('로그아웃 요청 중 오류 발생', error);
+      });
+}
+
+function deleteTokenCookie() {
+   document.cookie = 'access_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+   document.cookie = 'refresh_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+}
+
+function getAccessTokenFromCookie() {
+   const cookies = document.cookie.split(';');
+
+   for (const cookie of cookies) {
+      const [name, value] = cookie.trim().split('=');
+      if (name === 'access_token') {
+         return value;
+      }
+   }
+   return null;
 }
 
 function performSearch() {
