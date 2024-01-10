@@ -7,11 +7,18 @@ function getRoundInfo(scheduleId) {
          .then(Data => {
              const info = Data.data;
              
+             let actorNames = "";
+             info.actors.forEach(e => {
+                actorNames += e.actorName + ", ";
+            });
+
+            actorNames = actorNames.slice(0, -2);
+
              document.querySelector('.cal-info').innerHTML = `
              <div>
                 <p>남은 좌석</p>
-                <p>VIP : ${info.sumVIP}, R : ${info.sumR}, S : ${info.sumS}, A : ${info.sumA}, B : ${info.sumB}, C : ${info.sumC}</p>
-                <p>배우 : ${info.actors}</p>
+                <p>VIP : ${info.sumVIP}, R : ${info.sumR}, S : ${info.sumS}, A : ${info.sumA}</p>
+                <p>배우 : ${actorNames}</p>
             </div>`
          })
  }
