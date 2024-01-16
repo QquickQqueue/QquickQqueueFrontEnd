@@ -4,7 +4,13 @@ let startDate, endDate, scheduleList;
 window.onload = function () {
     const musicalId = new URLSearchParams(window.location.search).get('musicalId');
 
-    fetch("http://localhost:8080/api/musicals/" + musicalId)
+    fetch("http://localhost:8080/api/musicals/" + musicalId, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json",
+            "ACCESS-TOKEN": getAccessTokenFromCookie()
+        }
+    })
         .then(Response => {
             return Response.json();
         })
@@ -27,6 +33,18 @@ window.onload = function () {
             loadYYMM(init.today, scheduleList);
 
         })
+}
+
+function getAccessTokenFromCookie() {
+    const cookies = document.cookie.split(';');
+
+    for (const cookie of cookies) {
+        const [name, value] = cookie.trim().split('=');
+        if (name === 'access_token') {
+            return value;
+        }
+    }
+    return null;
 }
 
 const init = {

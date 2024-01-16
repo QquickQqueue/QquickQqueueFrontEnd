@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+* {
+   font-family: 'Gowun Dodum', sans-serif;
+}
+
 .my-calendar {
     width: 700px;
     margin: 30px;

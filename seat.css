@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+* {
+   font-family: 'Gowun Dodum', sans-serif;
+}
+
+.title {
+   background-color: beige;
+   background-position: center;
+   background-size: cover;
+
+   height: 50px;
+   min-width: 1670px;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   margin-top: 30px;
+   margin-bottom: 50px;
+}
+
+body {
+   min-width: 1670px;
+   overflow-x: hidden;
+}
+
+#stage {
+   background-color: #9e6213;
+   height: 30px;
+   min-width: 1670px;
+
+   margin-bottom: 20px;
+
+   color: white;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   border-radius: 0 0 50px 50px;
+}
+
+#seatList {
+   text-align: center;
+}
+
+button {
+   width: 50px;
+   height: 50px;
+   margin: 10px;
+}
+
+button:hover {
+   border: solid;
+}
+
+button.VIP {
+   background-color: aquamarine;
+}
+
+button.R {
+   background-color: greenyellow;
+}
+
+button.S {
+   background-color: gold;
+}
+
+button.A {
+   background-color: pink;
+}
+
+button[disabled] {
+   background-color: gray;
+}

@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
+* {
+   font-family: 'Gowun Dodum', sans-serif;
+}
+
+.mytitle {
+   background-color: white;
+   color: black;
+
+   height: 150px;
+
+   display: flex;
+   flex-direction: row;
+   align-items: flex-start;
+   justify-content: space-between;
+
+   background-position: center;
+   background-size: cover;
+
+   border: 1px solid black;
+}
+
+.logo {
+   background-color: white;
+   color: black;
+   font-size: 50px;
+   margin: auto 50px;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,23 +38,6 @@ body {
 h1,
 h2 {
     color: #333;
-}
-
-.mytitle {
-    background-color: white;
-    color: black;
-
-    height: 150px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-position: center;
-    background-size: cover;
-
-    border: 1px solid black;
 }
 
 .mycards {
