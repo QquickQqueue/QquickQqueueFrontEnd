@@ -75,7 +75,7 @@ function cancelTicket(ticketId) {
     })
         .then(response => response.json())
         .then(data => {
-            //todo 돈 보내주기
+            location.reload();
         })
         .catch(error => console.error("Error fetching tickets:", error));
 }
