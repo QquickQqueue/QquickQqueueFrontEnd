@@ -32,20 +32,26 @@ function requestPay() {
     IMP.request_pay({
         pg: "html5_inicis",
         pay_method: "card",
-        merchant_uid: merchant_uid,   // 주문번호
+        merchant_uid: merchant_uid,
         name: musicalName,
-        amount: 100,                         // 숫자 타입
+        amount: musicalPrice,
         buyer_email: tokenInfo.email,
         buyer_name: tokenInfo.name,
         buyer_tel: tokenInfo.phoneNumber,
         buyer_addr: $("#address").val() + " " + $("#detailAddress").val(),
         buyer_postcode: $("#postcode").val()
     }, function (rsp) {
-        requestCreateTicket()
+        if (rsp.success) {
+            requestCreateTicket()
+        } else {
+            var msg = '결제에 실패하였습니다.';
+            msg += '에러내용 : ' + rsp.error_msg;
+            alert(msg);
+        }
     });
 }
 
-function requestCreateTicket() {
+function requestCreateTicket(rsp) {
     const requestScheduleSeatId = {
         scheduleSeatId: scheduleSeatId
     }
@@ -61,16 +67,11 @@ function requestCreateTicket() {
         return Response.json();
     })
         .then(Data => {
-            if (Data.success) {
-                var msg = '결제가 완료되었습니다.';
-                alert(msg);
-                window.close();
-                location.href = "mypage.html";
-            } else {
-                var msg = '결제에 실패하였습니다.';
-                msg += '에러내용 : ' + rsp.error_msg;
-                alert(msg);
-            }
+            var msg = '결제가 완료되었습니다.';
+            alert(msg);
+            window.close();
+            location.href = "mypage.html";
+
         })
 }
 
