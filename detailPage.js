@@ -1,3 +1,4 @@
+
 let startDate, endDate, scheduleList;
 
 window.onload = function () {
@@ -46,6 +47,7 @@ function getAccessTokenFromCookie() {
     return null;
 }
 
+
 const init = {
     monList: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
     dayList: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -79,6 +81,11 @@ const init = {
     }
 };
 
+/**
+* @param {String} date
+* @param {String} start
+* @param {String} end
+*/
 function checkDate(date, start, end) {
     return !(date >= start && date <= end);
 }
@@ -87,6 +94,10 @@ const $calBody = document.querySelector('.cal-body');
 const $btnNext = document.querySelector('.btn-cal.next');
 const $btnPrev = document.querySelector('.btn-cal.prev');
 
+/**
+ * @param {date} fullDate
+ * @param {List} scheduleList
+ */
 function loadYYMM(fullDate, scheduleList) {
     let yy = fullDate.getFullYear();
     let mm = fullDate.getMonth();
@@ -137,19 +148,11 @@ function loadYYMM(fullDate, scheduleList) {
         trtd += '</tr>';
     }
     $calBody.innerHTML = trtd;
-
-    const dayCells = document.querySelectorAll('.day');
-    dayCells.forEach(cell => {
-        cell.addEventListener('click', function() {
-            const selectedCell = document.querySelector('.day-active');
-            if (selectedCell) {
-                selectedCell.classList.remove('day-active');
-            }
-            this.classList.add('day-active');
-        });
-    });
 }
 
+/**
+ * @param {string} val
+ */
 function createNewList(val) {
     let id = new Date().getTime() + '';
     let yy = init.activeDate.getFullYear();
@@ -167,6 +170,8 @@ function createNewList(val) {
     init.event.push(eventData);
     $todoList.appendChild(createLi(id, val, date));
 }
+
+
 
 $btnNext.addEventListener('click', () => loadYYMM(init.nextMonth(), scheduleList));
 $btnPrev.addEventListener('click', () => loadYYMM(init.prevMonth(), scheduleList));

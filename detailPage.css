@@ -30,40 +30,16 @@
 
 body {
     font-family: Arial, sans-serif;
-}
-
-.big-container {
-    width: 1800px;
-    min-height: 600px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    margin: 100px;
-    margin-left: 100px;
-}
-
-.mycards {
-    font-size: 30px;
-    width: 1200px;
-    border: solid 1px;
-    border-color: gainsboro;
-    border-radius: 2%;
-    padding: 30px;
-    margin-right: 80px;
-}
-
-.mycards img {
-    margin-bottom: 20px;
-}
-
-.container {
-    margin: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 h1,
 h2 {
     color: #333;
+}
+
+.mycards {
+    font-size: 30px;
 }

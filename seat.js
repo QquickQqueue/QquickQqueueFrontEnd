@@ -28,7 +28,7 @@ window.onload = function () {
 }
 
 function showSeatInfo(id, rowNum, columnNum, grade, price, reserved) {
-    var result = confirm(`행: ${rowNum}, 열: ${columnNum}, 등급: ${grade}, 가격: ${price}, 예약여부: ${reserved ? '예약됨' : '예약 가능'}` + "\n" + "결제 하시겠습니까?");
+    var result = confirm(`좌석 번호: ${id}, 행: ${rowNum}, 열: ${columnNum}, 등급: ${grade}, 가격: ${price}, 예약여부: ${reserved ? '예약됨' : '예약 가능'}` + "\n" + "결제 하시겠습니까?");
     if (result === true) {
         seatInfo = [id, rowNum, columnNum, grade, price];
         window.location.href = "payment.html?schedule-seat-id=" + id;

@@ -9,8 +9,8 @@
    background-position: center;
    background-size: cover;
 
-   height: 80px;
-   min-width: 1200px;
+   height: 50px;
+   min-width: 1670px;
 
    display: flex;
    flex-direction: column;
@@ -22,14 +22,14 @@
 }
 
 body {
-   min-width: 1200px;
+   min-width: 1670px;
    overflow-x: hidden;
 }
 
 #stage {
    background-color: #9e6213;
    height: 30px;
-   min-width: 1200px;
+   min-width: 1670px;
 
    margin-bottom: 20px;
 
@@ -45,29 +45,24 @@ body {
 
 #seatList {
    text-align: center;
-   margin-bottom: 50px;
 }
 
 button {
-   width: 30px;
-   height: 30px;
-   margin: 7px;
+   width: 50px;
+   height: 50px;
+   margin: 10px;
 }
 
-button.VIP:hover,
-button.R:hover,
-button.S:hover,
-button.A:hover {
+button:hover {
    border: solid;
-   background-color: tomato;
 }
 
 button.VIP {
-   background-color: skyblue;
+   background-color: aquamarine;
 }
 
 button.R {
-   background-color: yellowgreen;
+   background-color: greenyellow;
 }
 
 button.S {
