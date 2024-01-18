@@ -25,6 +25,6 @@ function getRoundInfo(scheduleId) {
 }
 
 function openWindow(scheduleId) {
-    const options = 'width=1670, height=900, top=50, left=50, scrollbars=yes'
+    const options = 'width=1200, height=900, top=50, left=50, scrollbars=yes'
     window.open(`seat.html?scheduleId=${scheduleId}`, '_blank', options)
 }
