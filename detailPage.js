@@ -3,7 +3,7 @@ let startDate, endDate, scheduleList;
 window.onload = function () {
     const musicalId = new URLSearchParams(window.location.search).get('musicalId');
 
-    fetch("http://localhost:8080/api/musicals/" + musicalId, {
+    fetch("https://qquickqqueue.store/api/musicals/" + musicalId, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",

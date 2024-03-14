@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
          phoneNumber: `${firstNumInput.value}-${middleNumInput.value}-${lastNumInput.value}`,
       };
 
-      fetch("http://localhost:8080/api/signup", {
+      fetch("https://qquickqqueue.store/api/signup", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
