@@ -49,7 +49,7 @@ window.onload = function () {
 
 function fetchMusicals(pageNumber) {
    const apiUrl = isSearching ? `/search?title=${searchTerm}&page=${pageNumber}` : `?page=${pageNumber}`;
-   fetch(`http://localhost:8080/api/musicals${apiUrl}`)
+   fetch(`https://qquickqqueue.store/api/musicals${apiUrl}`)
       .then(Response => Response.json())
       .then(Data => {
          displayMusicals(Data.data.content);
@@ -108,7 +108,7 @@ function displayMusicals(musicals) {
 }
 
 function performLogout() {
-   fetch('http://localhost:8080/api/logout', {
+   fetch('https://qquickqqueue.store/api/logout', {
       method: 'GET', headers: {
          "Content-Type": "application/json",
          "ACCESS-TOKEN": getAccessTokenFromCookie()

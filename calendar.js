@@ -1,6 +1,6 @@
 function getRoundInfo(scheduleId) {
 
-    fetch("http://localhost:8080/api/musicals/round/" + scheduleId)
+    fetch("https://qquickqqueue.store/api/musicals/round/" + scheduleId)
         .then(Response => {
             return Response.json();
         })

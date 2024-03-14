@@ -6,7 +6,7 @@ window.onload = function () {
 }
 
 function fetchMypageInfo() {
-    fetch('http://localhost:8080/api/members', {
+    fetch('https://qquickqqueue.store/api/members', {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -24,7 +24,7 @@ function fetchMypageInfo() {
 }
 
 function fetchMyTicketsInfo(pageNumber) {
-    fetch(`http://localhost:8080/api/tickets?page=${pageNumber}`, {
+    fetch(`https://qquickqqueue.store/api/tickets?page=${pageNumber}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function fetchMyTicketsInfo(pageNumber) {
 }
 
 function cancelTicket(ticketId) {
-    fetch('http://localhost:8080/api/tickets/cancel/' + ticketId, {
+    fetch('https://qquickqqueue.store/api/tickets/cancel/' + ticketId, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

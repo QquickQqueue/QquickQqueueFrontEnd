@@ -3,7 +3,7 @@ let seatInfo;
 window.onload = function () {
     const scheduleId = new URLSearchParams(window.location.search).get('scheduleId');
 
-    fetch("http://localhost:8080/api/musicals/seat/" + scheduleId, {
+    fetch("https://qquickqqueue.store/api/musicals/seat/" + scheduleId, {
         method: 'GET',
         headers: {
             "Content-Type": "application/json",

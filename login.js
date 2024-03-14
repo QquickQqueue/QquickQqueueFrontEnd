@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
          password: password
       };
 
-      fetch("http://localhost:8080/api/login", {
+      fetch("https://qquickqqueue.store/api/login", {
          method: "POST",
          headers: {
             "Content-Type": "application/json"
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function loginWithKakao() {
    Kakao.Auth.login({
       success: function (authObj) {
-         fetch("http://localhost:8080/api/kakao?accessToken=" + authObj.access_token)
+         fetch("https://qquickqqueue.store/api/kakao?accessToken=" + authObj.access_token)
             .then(response => {
                if (response.ok) {
                   const accessToken = response.headers.get("Access-Token");

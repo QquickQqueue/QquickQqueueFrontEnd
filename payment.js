@@ -8,7 +8,7 @@ let musicalName;
 let musicalPrice;
 
 window.onload = function () {
-    fetch("http://localhost:8080/api/schedule-seat/" + scheduleSeatId, {
+    fetch("https://qquickqqueue.store/api/schedule-seat/" + scheduleSeatId, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function requestCreateTicket(rsp) {
         scheduleSeatId: scheduleSeatId
     }
 
-    fetch("http://localhost:8080/api/tickets", {
+    fetch("https://qquickqqueue.store/api/tickets", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
